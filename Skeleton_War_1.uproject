@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "4.7",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "Skeleton_War_1",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
