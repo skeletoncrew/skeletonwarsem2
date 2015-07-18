@@ -4,7 +4,7 @@
 #include "SkeleUtilityFunctionLibrary.h"
 
 // Constructor
-USkeleUtilityFunctionLibrary::USkeleUtilityFunctionLibrary(const class FPostConstructInitializeProperties& PCIP)
+USkeleUtilityFunctionLibrary::USkeleUtilityFunctionLibrary(const class FObjectInitializer& PCIP)
     : Super(PCIP) {
 
 }
@@ -27,7 +27,7 @@ TArray<FString> USkeleUtilityFunctionLibrary::GetDefaultPlayerNamesFromFile() {
     FFileHelper::LoadFileToString(fileContents, *filePath);
 
     TArray<FString> items;
-    int32 itemCount = fileContents.ParseIntoArray(&items, _T(","), true);
+    int32 itemCount = fileContents.ParseIntoArray(items, TEXT(","), true);
 
     return items;
 }
