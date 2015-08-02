@@ -5,6 +5,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SkeleUtilityFunctionLibrary.generated.h"
 
+
 /**
  *
  */
@@ -12,8 +13,8 @@ UCLASS()
 class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_UCLASS_BODY()
 
-    /** Returns the name of the map that the given actor currently occupies. */
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+        /** Returns the name of the map that the given actor currently occupies. */
+        UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static FString GetCurrentMapReference(AActor* sourceActor);
 
     /** Reads in an array of default player names from file (Config/DefaultPlayerNames.ini). */
@@ -24,6 +25,13 @@ class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static TArray<int32> SortPlayerScores(TArray<int32> scores);
 
-};
+    /** Returns the current width and height of the default monitor. */
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+        static void GetMonitorResolution(int32 &width, int32 &height);
 
+    /** Returns an array of common resolutions up to the current width and height of the monitor. */
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+        static TArray<FString> GetValidResolutions();
+
+};
 

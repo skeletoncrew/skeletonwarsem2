@@ -45,3 +45,59 @@ TArray<int32> USkeleUtilityFunctionLibrary::SortPlayerScores(TArray<int32> score
 
     return indices;
 }
+
+void USkeleUtilityFunctionLibrary::GetMonitorResolution(int32 &width, int32 &height) {
+    FDisplayMetrics disp;
+    FDisplayMetrics::GetDisplayMetrics(disp);
+    width = disp.PrimaryDisplayWidth;
+    height = disp.PrimaryDisplayHeight;
+}
+
+TArray<FString> USkeleUtilityFunctionLibrary::GetValidResolutions() {
+    int32 width, height;
+    GetMonitorResolution(width, height);
+
+    int32 widthsArray[] = {
+        1280,
+        1280,
+        1366,
+        1440,
+        1600,
+        1600,
+        1680,
+        1920,
+        1920,
+        2048,
+        2560,
+        2560,
+        3840,
+        4096
+    };
+    int32 heightsArray[] = {
+        800,
+        1024,
+        768,
+        900,
+        900,
+        1200,
+        1050,
+        1080,
+        1200,
+        1080,
+        1440,
+        1600,
+        2160,
+        2160
+    };
+
+    TArray<FString> resolutions;
+    for (int i = 0; i < ARRAY_COUNT(widthsArray); i++) {
+        if (widthsArray[i] <= width && heightsArray[i] <= height) {
+            resolutions.Add(FString::FromInt(widthsArray[i]) + "x" + FString::FromInt(heightsArray[i]));
+        } else {
+            break;
+        }
+    }
+
+    return resolutions;
+}
