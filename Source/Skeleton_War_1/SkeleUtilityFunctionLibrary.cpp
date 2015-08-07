@@ -101,3 +101,14 @@ TArray<FString> USkeleUtilityFunctionLibrary::GetValidResolutions() {
 
     return resolutions;
 }
+
+FString USkeleUtilityFunctionLibrary::ExtractHostName(FString sessionName) {
+    TArray<FString> items;
+    int32 itemCount = sessionName.ParseIntoArray(items, TEXT("-"), true);
+
+    if (itemCount > 0) {
+        return items[0];
+    } else {
+        return sessionName;
+    }
+}
