@@ -29,6 +29,10 @@ TArray<FString> USkeleUtilityFunctionLibrary::GetDefaultPlayerNamesFromFile() {
     TArray<FString> items;
     int32 itemCount = fileContents.ParseIntoArray(items, TEXT(","), true);
 
+    if (items.Last().Contains(TEXT("\n"))) {
+        items.Pop();
+    }
+
     return items;
 }
 

@@ -33,7 +33,7 @@ class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static TArray<FString> GetValidResolutions();
 
-    /** Returns the substring up to the first underscore in the given string. */
+    /** Returns the substring up to the first hyphen in the given string. */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static FString ExtractHostName(FString sessionName);
 
