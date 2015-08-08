@@ -29,6 +29,10 @@ TArray<FString> USkeleUtilityFunctionLibrary::GetDefaultPlayerNamesFromFile() {
     TArray<FString> items;
     int32 itemCount = fileContents.ParseIntoArray(items, TEXT(","), true);
 
+    if (items.Last().Contains(TEXT("\n"))) {
+        items.Pop();
+    }
+
     return items;
 }
 
@@ -100,4 +104,15 @@ TArray<FString> USkeleUtilityFunctionLibrary::GetValidResolutions() {
     }
 
     return resolutions;
+}
+
+FString USkeleUtilityFunctionLibrary::ExtractHostName(FString sessionName) {
+    TArray<FString> items;
+    int32 itemCount = sessionName.ParseIntoArray(items, TEXT("-"), true);
+
+    if (itemCount > 0) {
+        return items[0];
+    } else {
+        return sessionName;
+    }
 }
