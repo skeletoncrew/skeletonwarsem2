@@ -116,3 +116,19 @@ FString USkeleUtilityFunctionLibrary::ExtractHostName(FString sessionName) {
         return sessionName;
     }
 }
+
+FString USkeleUtilityFunctionLibrary::GetPlayerNameWithSuffix(TArray<FString> playerNames, FString playerName) {
+    int count = 1;
+
+    for (auto &name : playerNames) {
+        if (name.StartsWith(playerName)) {
+            count++;
+        }
+    }
+
+    if (count == 1) {
+        return playerName;
+    } else {
+        return playerName + FString::FromInt(count);
+    }
+}

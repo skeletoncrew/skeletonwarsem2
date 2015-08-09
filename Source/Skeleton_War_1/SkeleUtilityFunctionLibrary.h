@@ -37,5 +37,9 @@ class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static FString ExtractHostName(FString sessionName);
 
+    /** Counts how many names in the array have the same base name as given and returns the name with an appropriate suffix. */
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+        static FString GetPlayerNameWithSuffix(TArray<FString> playerNames, FString playerName);
+
 };
 
