@@ -149,3 +149,11 @@ TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForAction(APlayerController* c
 	}
 	return keys;
 }
+
+TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForForwardAxis(APlayerController* controller, const int32 scale) {
+	
+}
+
+TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForRightAxis(APlayerController* controller, const int32 scale) {
+	
+}
