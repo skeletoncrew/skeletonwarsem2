@@ -150,10 +150,26 @@ TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForAction(APlayerController* c
 	return keys;
 }
 
-TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForForwardAxis(APlayerController* controller, const int32 scale) {
-	
+TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForForwardAxis(APlayerController* controller, bool positiveScale) {
+    TArray<FKey> keys;
+    for (auto mapping : controller->PlayerInput->AxisMappings) {
+        if (mapping.AxisName == FName(TEXT("MoveForward"))) {
+            if ((positiveScale && mapping.Scale > 0) || (!positiveScale && mapping.Scale < 0)) {
+                keys.Add(mapping.Key);
+            }
+        }
+    }
+    return keys;
 }
 
-TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForRightAxis(APlayerController* controller, const int32 scale) {
-	
+TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForRightAxis(APlayerController* controller, bool positiveScale) {
+    TArray<FKey> keys;
+    for (auto mapping : controller->PlayerInput->AxisMappings) {
+        if (mapping.AxisName == FName(TEXT("MoveRight"))) {
+            if ((positiveScale && mapping.Scale > 0) || (!positiveScale && mapping.Scale < 0)) {
+                keys.Add(mapping.Key);
+            }
+        }
+    }
+    return keys;
 }
