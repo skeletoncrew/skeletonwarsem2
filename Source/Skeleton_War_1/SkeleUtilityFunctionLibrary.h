@@ -41,5 +41,9 @@ class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static FString GetPlayerNameWithSuffix(TArray<FString> playerNames, FString playerName);
 
+    /** Gets a list of the inputs bound to a given action. */
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+        static TArray<FKey> GetKeysForAction(APlayerController* controller, const FName actionName);
+
 };
 
