@@ -140,3 +140,20 @@ FString USkeleUtilityFunctionLibrary::GetPlayerNameWithSuffix(TArray<FString> pl
 
     return tempName;
 }
+
+TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForAction(APlayerController* controller, const FName actionName) {
+	TArray<FInputActionKeyMapping> mappings = controller->PlayerInput->GetKeysForAction(actionName);
+	TArray<FKey> keys;
+	for (auto mapping : mappings) {
+		keys.Add(mapping.Key);
+	}
+	return keys;
+}
+
+TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForForwardAxis(APlayerController* controller, const int32 scale) {
+	
+}
+
+TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForRightAxis(APlayerController* controller, const int32 scale) {
+	
+}
