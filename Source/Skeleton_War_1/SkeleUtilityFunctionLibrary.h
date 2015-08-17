@@ -13,9 +13,9 @@ UCLASS()
 class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_UCLASS_BODY()
 
-        /** Returns the name of the map that the given actor currently occupies. */
-        UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
-        static FString GetCurrentMapReference(AActor* sourceActor);
+	/** Returns the name of the map that the given actor currently occupies. */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+	static FString GetCurrentMapReference(AActor* sourceActor);
 
     /** Reads in an array of default player names from file (Config/DefaultPlayerNames.ini). */
     UFUNCTION(BlueprintCallable, Category = SkeleFunctionLibrary)
@@ -44,6 +44,14 @@ class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     /** Gets a list of the inputs bound to a given action. */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static TArray<FKey> GetKeysForAction(APlayerController* controller, const FName actionName);
+
+    /** Returns a list of the inputs bound to the forward axis with the given scale. */
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+        static TArray<FKey> GetKeysForForwardAxis(APlayerController* controller, const int32 scale);
+
+    /** Returns a list of the inputs bound to the right axis with the given scale. */
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
+        static TArray<FKey> GetKeysForRightAxis(APlayerController* controller, const int32 scale);
 
 };
 
