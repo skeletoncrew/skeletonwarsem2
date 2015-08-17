@@ -47,11 +47,11 @@ class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
 
     /** Returns a list of the inputs bound to the forward axis with the given scale. */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
-        static TArray<FKey> GetKeysForForwardAxis(APlayerController* controller, const int32 scale);
+        static TArray<FKey> GetKeysForForwardAxis(APlayerController* controller, bool positiveScale);
 
     /** Returns a list of the inputs bound to the right axis with the given scale. */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
-        static TArray<FKey> GetKeysForRightAxis(APlayerController* controller, const int32 scale);
+        static TArray<FKey> GetKeysForRightAxis(APlayerController* controller, bool positiveScale);
 
 };
 
