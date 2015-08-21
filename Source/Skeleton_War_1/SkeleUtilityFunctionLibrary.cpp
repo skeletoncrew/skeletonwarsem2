@@ -107,11 +107,11 @@ TArray<FString> USkeleUtilityFunctionLibrary::GetValidResolutions() {
 }
 
 FString USkeleUtilityFunctionLibrary::ExtractHostName(FString sessionName) {
-    TArray<FString> items;
-    int32 itemCount = sessionName.ParseIntoArray(items, TEXT("-"), true);
+    int32 index;
+    bool found = sessionName.FindLastChar('-', index);
 
-    if (itemCount > 0) {
-        return items[0];
+    if (found) {
+        return sessionName.Mid(0, index);
     } else {
         return sessionName;
     }
@@ -125,18 +125,6 @@ FString USkeleUtilityFunctionLibrary::GetPlayerNameWithSuffix(TArray<FString> pl
         count++;
         tempName = playerName + FString::FromInt(count);
     }
-
-    /*for (auto &name : playerNames) {
-        if (name.StartsWith(playerName)) {
-            count++;
-        }
-    }
-
-    if (count == 1) {
-        return playerName;
-    } else {
-        return playerName + FString::FromInt(count);
-    }*/
 
     return tempName;
 }
