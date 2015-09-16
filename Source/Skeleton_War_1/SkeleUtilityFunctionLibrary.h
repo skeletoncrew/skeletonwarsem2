@@ -1,9 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
+#include "Engine.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SkeleUtilityFunctionLibrary.generated.h"
+
 
 
 /**
@@ -52,6 +53,9 @@ class USkeleUtilityFunctionLibrary : public UBlueprintFunctionLibrary {
     /** Returns a list of the inputs bound to the right axis with the given scale. */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = SkeleFunctionLibrary)
         static TArray<FKey> GetKeysForRightAxis(APlayerController* controller, bool positiveScale);
+
+	UFUNCTION(BlueprintCallable, Category = SkeleFunctionLibrary)
+		static bool FileSaveString(FString SaveTextB, FString FileNameB);
 
 };
 
