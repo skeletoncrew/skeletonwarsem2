@@ -161,3 +161,8 @@ TArray<FKey> USkeleUtilityFunctionLibrary::GetKeysForRightAxis(APlayerController
     }
     return keys;
 }
+
+ bool USkeleUtilityFunctionLibrary::FileSaveString(FString SaveTextB, FString FileNameB)
+ {
+     return FFileHelper::SaveStringToFile(SaveTextB, *(FPaths::GameDir() + "GameLogs/GameLog-" + FileNameB));
+ }
