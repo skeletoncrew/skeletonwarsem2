@@ -8,6 +8,7 @@ public class Skeleton_War_1 : ModuleRules
 	{
         PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "OnlineSubsystem", "OnlineSubsystemUtils" });
 
+		PublicDependencyModuleNames.AddRange(new string[] { "VaRestPlugin" });
         //PrivateDependencyModuleNames.AddRange(new string[] { "OnlineSubsystem" });
 
 		// Uncomment if you are using Slate UI
