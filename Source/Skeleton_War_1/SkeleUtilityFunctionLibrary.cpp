@@ -98,8 +98,6 @@ TArray<FString> USkeleUtilityFunctionLibrary::GetValidResolutions() {
     for (int i = 0; i < ARRAY_COUNT(widthsArray); i++) {
         if (widthsArray[i] <= width && heightsArray[i] <= height) {
             resolutions.Add(FString::FromInt(widthsArray[i]) + "x" + FString::FromInt(heightsArray[i]));
-        } else {
-            break;
         }
     }
 
