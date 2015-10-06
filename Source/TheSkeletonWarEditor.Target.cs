@@ -3,11 +3,11 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class Skeleton_War_1Target : TargetRules
+public class TheSkeletonWarEditorTarget : TargetRules
 {
-	public Skeleton_War_1Target(TargetInfo Target)
+	public TheSkeletonWarEditorTarget(TargetInfo Target)
 	{
-		Type = TargetType.Game;
+		Type = TargetType.Editor;
 	}
 
 	//
