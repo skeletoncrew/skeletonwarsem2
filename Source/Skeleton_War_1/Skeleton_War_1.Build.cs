@@ -8,7 +8,7 @@ public class Skeleton_War_1 : ModuleRules
 	{
         PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "OnlineSubsystemNull" });
 		
-        //PrivateDependencyModuleNames.AddRange(new string[] { "OnlineSubsystem" });
+        PrivateDependencyModuleNames.AddRange(new string[] { "HTTP" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
