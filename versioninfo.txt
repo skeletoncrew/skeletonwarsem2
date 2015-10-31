@@ -1,5 +1,5 @@
 The Skeleton War
 
-Version: 1.02
+Version: 1.0.2
 
-Release date: 30/10/2015
+Release date: 1/11/2015
